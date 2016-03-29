@@ -18,7 +18,7 @@ var gulp = require("gulp"),
 
 // ----- Task: Default ----- //
 
-gulp.task("default", ["connect", "sass", "watch"]);
+gulp.task("default", ["connect", "watch"]);
 
 // -------------------------------------
 //   Server
@@ -41,13 +41,13 @@ gulp.task('html', function () {
 });
 
 gulp.task("sass", function() {
-  return gulp.src("./source/stylesheets/*.sass")
+  gulp.src("./source/stylesheets/*.sass")
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest('./source/stylesheets'))
     .pipe(connect.reload());
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", ["sass"], function() {
   gulp.watch(["./source/**/*.html"], ["html"]);
   gulp.watch(['./source/**/*.sass'], ["sass"]);
 });

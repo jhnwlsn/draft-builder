@@ -1,6 +1,6 @@
 {
-  "name": "solomon-templates",
-  "description": "Static styles for the 2016 redeisgn of the Solomon platform for Cisco.",
+  "name": "draft-example",
+  "description": "Static site builder based on gulp.",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^3.2.2",
