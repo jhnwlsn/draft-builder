@@ -1,8 +1,28 @@
+// *************************************
+//
+//   Solomon - Gulp Setup
+//
+// *************************************
+
 'use strict';
+
+// -------------------------------------
+//   Foundation
+// -------------------------------------
+
+// ----- Requires ----- //
 
 var gulp = require("gulp"),
     connect = require ("gulp-connect"),
     sass = require("gulp-sass");
+
+// ----- Task: Default ----- //
+
+gulp.task("default", ["connect", "sass", "watch"]);
+
+// -------------------------------------
+//   Server
+// -------------------------------------
 
 gulp.task("connect", function() {
   connect.server({
@@ -10,6 +30,10 @@ gulp.task("connect", function() {
     livereload: true
   });
 });
+
+// -------------------------------------
+//   Assets
+// -------------------------------------
 
 gulp.task('html', function () {
   gulp.src('./source/*.html')
@@ -26,6 +50,4 @@ gulp.task("sass", function() {
 gulp.task("watch", function() {
   gulp.watch(["./source/**/*.html"], ["html"]);
   gulp.watch(['./source/**/*.sass'], ["sass"]);
-})
-
-gulp.task("default", ["connect", "sass", "watch"]);
+});
