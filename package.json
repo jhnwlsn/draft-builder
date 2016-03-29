@@ -1,5 +1,5 @@
 {
-  "name": "draft-example",
+  "name": "draft-builder-example",
   "description": "Static site builder based on gulp.",
   "devDependencies": {
     "gulp": "^3.9.1",
